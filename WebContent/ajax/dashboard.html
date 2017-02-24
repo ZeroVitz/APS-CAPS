@@ -1,0 +1,88 @@
+<div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<ol class="breadcrumb">
+			<li><a href="index.jsp">Inicio</a></li>
+			<li><a href="#">Inicio</a></li>
+		</ol>
+	</div>
+</div>
+<!--End Breadcrumb-->
+<!--Start Dashboard 1-->
+<div id="dashboard-header" class="row">
+	<div class="col-xs-10 col-sm-10">
+		<h3>COMITE DE AGUA POTABLE Y SANEAMIENTO</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<div class="box">
+		<img class="col-sm-offset-2"src="img/fotocaps.jpg" alt="" />		
+	</div>
+	</div>
+</div>
+
+<div class="box-content" id="accordion">
+				<h3>¿Quienes somos?</h3>
+				<div>
+					<p>
+						La organización del Comité de Agua Potable (CAP) de Ciudadela San Martín se trata de una red de Distribución de agua, 
+						el cual se encarga de abastecer a su comunidad, con el fin de hacer llegar agua potable a cada una de las familias adyacentes. La organización mantiene un control sobre
+						el pago de este servicio y la conexión de tuberías; haciendo el rol de otras empresas que prestan el mismo servicio, 
+						tal es el caso de ENACAL, no obstante, sin fines lucrativos y a menor escala. Las tarifas de pago suelen variar, ya que dicha organización
+						primero evalúa la situación de cada cliente por ejemplo la cantidad de personas de la familia, 
+						los días que permanecen utilizando el servicio y las discapacidades que podrán presentar.
+
+					</p>
+				</div>
+				<h3>Misión</h3>
+				<div>
+					<p>
+					La misión del Comité de Agua Potable y Saneamiento, es que el servicio de agua potable llegue a todos 
+					los usuarios de manera eficiente, tomando en cuenta las necesidades de carácter social de nuestros usuarios 
+					y a la vez ser una organización que vele por el desarrollo comunitario llevando el vital líquido sin distingos
+					de ningún tipo a todos por igual con tarifas generales adecuadas a la realidad social de los usuarios.
+					
+						 
+					</p>
+				</div>
+			</div>
+
+<div class="clearfix visible-xs"></div>
+	
+<!--End Dashboard 1-->
+<!--Start Dashboard 2-->
+
+<!--End Dashboard 2 -->
+<div style="height: 40px;"></div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// Load TimePicker plugin and callback all time and date pickers
+	LoadTimePickerScript(AllTimePickers);
+	// Create jQuery-UI tabs
+	$("#tabs").tabs();
+	// Sortable for elements
+	$(".sort").sortable({
+		items: "div.col-sm-2",
+		appendTo: 'div.box-content'
+	});
+	// Droppable for example of trash
+	$(".drop div.col-sm-2").draggable({containment: '.dropbox' });
+	$('#trash').droppable({
+		drop: function(event, ui) {
+			$(ui.draggable).remove();
+		}
+	});
+	var icons = {
+		header: "ui-icon-circle-arrow-e",
+		activeHeader: "ui-icon-circle-arrow-s"
+	};
+	// Make accordion feature of jQuery-UI
+	$("#accordion").accordion({icons: icons });
+	// Create UI spinner
+	$("#ui-spinner").spinner();
+	// Add Drag-n-Drop to boxes
+	WinMove();
+});
+</script>
+
